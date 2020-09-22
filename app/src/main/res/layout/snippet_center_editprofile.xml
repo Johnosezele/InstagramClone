@@ -49,7 +49,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="40dp"
                     android:layout_centerVertical="true"
-                    android:background="null"
                     android:inputType="textNoSuggestions"
                     android:hint="username"
                     android:id="@+id/username"/>
@@ -76,7 +75,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="40dp"
                     android:layout_centerVertical="true"
-                    android:background="null"
                     android:inputType="textNoSuggestions"
                     android:hint="display name"
                     android:id="@+id/display_name"/>
@@ -103,7 +101,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="40dp"
                     android:layout_centerVertical="true"
-                    android:background="null"
                     android:inputType="textNoSuggestions"
                     android:hint="website"
                     android:id="@+id/website"/>
@@ -130,7 +127,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="40dp"
                     android:layout_centerVertical="true"
-                    android:background="null"
                     android:inputType="textNoSuggestions"
                     android:hint="description"
                     android:id="@+id/description"/>
@@ -171,7 +167,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="40dp"
                     android:layout_centerVertical="true"
-                    android:background="null"
                     android:inputType="textEmailAddress"
                     android:hint="email"
                     android:id="@+id/email"/>
@@ -197,7 +192,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="40dp"
                     android:layout_centerVertical="true"
-                    android:background="null"
                     android:inputType="phone"
                     android:hint="phone number"
                     android:id="@+id/number"/>

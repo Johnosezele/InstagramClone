@@ -3,6 +3,8 @@ package com.johnosezele.instagramclone.Profile;
 import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -14,7 +16,9 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
+import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
 import com.johnosezele.instagramclone.R;
+import com.johnosezele.instagramclone.Utils.BottomNavigationViewHelper;
 import com.johnosezele.instagramclone.Utils.SectionsStatePagerAdapter;
 
 import java.util.ArrayList;
@@ -22,6 +26,7 @@ import java.util.ArrayList;
 public class AccountSettingsActivity extends AppCompatActivity {
 
     private static final String TAG = "AccountSettingsActivity";
+    private static final int ACTIVITY_NUM = 4;
 
     private Context mContext;
 
@@ -39,6 +44,7 @@ public class AccountSettingsActivity extends AppCompatActivity {
         mRelativeLayout = findViewById(R.id.relLayout1);
 
         setupSettingsList();
+        setUpBottomNavigationView();
         setupFragments();
 
         //Setting up backArrow for navigating back
@@ -87,5 +93,18 @@ public class AccountSettingsActivity extends AppCompatActivity {
                 setViewPager(position);
             }
         });
+    }
+
+    /**
+     * BottomNavigationView setup
+     */
+    private void setUpBottomNavigationView(){
+        Log.d(TAG, "setUpBottomNavigationView: setting up BottomNavigationView");
+        BottomNavigationViewEx bottomNavigationViewEx = findViewById(R.id.bottomNavViewBar);
+        BottomNavigationViewHelper.setupBottomNavigationView(bottomNavigationViewEx);
+        BottomNavigationViewHelper.enableNavigation(mContext, bottomNavigationViewEx);
+        Menu menu = bottomNavigationViewEx.getMenu();
+        MenuItem menuItem = menu.getItem(ACTIVITY_NUM);
+        menuItem.setChecked(true);
     }
 }

@@ -9,6 +9,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 
@@ -20,7 +21,10 @@ import androidx.appcompat.widget.Toolbar;
 import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
 import com.johnosezele.instagramclone.R;
 import com.johnosezele.instagramclone.Utils.BottomNavigationViewHelper;
+import com.johnosezele.instagramclone.Utils.GridImageAdapter;
+import com.johnosezele.instagramclone.Utils.UniversalImageLoader;
 
+import java.util.ArrayList;
 import java.util.Objects;
 
 public class ProfileActivity extends AppCompatActivity {
@@ -30,6 +34,7 @@ public class ProfileActivity extends AppCompatActivity {
     private Context mContext = ProfileActivity.this;
 
     private ProgressBar mProgressBar;
+    private ImageView profilePhoto;
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
@@ -38,12 +43,48 @@ public class ProfileActivity extends AppCompatActivity {
         setContentView(R.layout.activity_profile);
         Log.d(TAG, "onCreate: started");
 
-        mProgressBar = findViewById(R.id.profileProgressBar);
-        mProgressBar.setVisibility(View.GONE);
         setUpBottomNavigationView();
         setupToolbar();
+        setupActivityWidgets();
+        setProfileImage();
+    }
+    private void tempGridSetup(){
+        ArrayList<String> imgURLs = new ArrayList<>();
+        imgURLs.add("https://unsplash.com/photos/6VPEOdpFNAs");
+        imgURLs.add("https://en.wikipedia.org/wiki/File:Male_impala_profile.jpg");
+        imgURLs.add("https://en.wikipedia.org/wiki/File:NafSadh_Profile.jpg");
+        imgURLs.add("https://commons.wikimedia.org/wiki/File:G-dragon_profile.jpg");
+        imgURLs.add("https://unsplash.com/photos/MRb1aJIwCJs");
+        imgURLs.add("https://unsplash.com/photos/oC8D35Omyxw");
+        imgURLs.add("https://unsplash.com/photos/7PcN1KEjRZc");
+        imgURLs.add("https://unsplash.com/photos/QZge5rhkgSs");
+        imgURLs.add("https://unsplash.com/photos/qwyytY_Iguk");
+        imgURLs.add("https://unsplash.com/photos/EwKXn5CapA4");
+        imgURLs.add("https://unsplash.com/photos/dfo06_DqxpA");
+        imgURLs.add("https://unsplash.com/photos/vngzm4P2BTs");
+
+        setupImageGrid(imgURLs);
     }
 
+    private void setupImageGrid(ArrayList<String> imgURLs){
+        GridView gridView = findViewById(R.id.gridView);
+
+        GridImageAdapter adapter = new GridImageAdapter(mContext, R.layout.layout_grid_imageview, "", imgURLs);
+    }
+    private void setProfileImage(){
+        Log.d(TAG, "setProfileImage: setting profile photo.");
+        String imgURL = "https://static.vecteezy.com/system/resources/previews/000/071/469/original/android-logo-vector.jpg";
+        UniversalImageLoader.setImage(imgURL, profilePhoto, mProgressBar, "");
+    }
+    private void setupActivityWidgets(){
+        mProgressBar = findViewById(R.id.profileProgressBar);
+        mProgressBar.setVisibility(View.GONE);
+        profilePhoto = findViewById(R.id.profile_photo);
+    }
+
+    /**
+     * Responsible for setting up the profile toolbar
+     */
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     private void setupToolbar(){
         Toolbar toolbar = findViewById(R.id.profileToolBar);
