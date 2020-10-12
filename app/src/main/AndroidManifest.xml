@@ -23,6 +23,8 @@
         <activity android:name="com.johnosezele1.instagramclone.Search.SearchActivity"> </activity>
         <activity android:name="com.johnosezele1.instagramclone.Share.ShareActivity"> </activity>
         <activity android:name="com.johnosezele1.instagramclone.Profile.AccountSettingsActivity"> </activity>
+        <activity android:name="com.johnosezele1.instagramclone.Login.RegisterActivity"></activity>
+        <activity android:name="com.johnosezele1.instagramclone.Login.LoginActivity"></activity>
     </application>
 
 </manifest>

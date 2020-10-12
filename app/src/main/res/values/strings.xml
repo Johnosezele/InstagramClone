@@ -2,4 +2,8 @@
     <string name="app_name">Instagram clone</string>
     <string name="edit_profile_fragment">Edit Profile</string>
     <string name="sign_out_fragment">Sign Out</string>
+    
+    <!--  Firebase messages   -->
+    <string name="auth_failed">Failed to Authenticate</string>
+    <string name="auth_successful">Authentication Successful</string>
 </resources>

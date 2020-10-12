@@ -29,7 +29,7 @@
                     android:layout_height="wrap_content"
                     android:inputType="textEmailAddress"
                     android:hint="Email"
-                    android:id="@+id/input_email"/>
+                    android:id="@+id/input_email_Login"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -43,7 +43,7 @@
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
                 android:hint="Password"
-                android:id="@+id/input_password"/>
+                android:id="@+id/input_password_Login"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -82,6 +82,7 @@
             android:layout_alignParentTop="true"/>
 
         <TextView
+            android:id="@+id/pleaseWait"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Please wait..."
