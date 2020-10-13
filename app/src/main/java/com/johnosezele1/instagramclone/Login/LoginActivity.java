@@ -20,6 +20,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.johnosezele1.instagramclone.Home.HomeActivity;
 import com.johnosezele1.instagramclone.R;
 
 public class LoginActivity extends AppCompatActivity {
@@ -105,10 +106,23 @@ public class LoginActivity extends AppCompatActivity {
                                                   Toast.LENGTH_SHORT).show();
                                           mProgressBar.setVisibility(View.GONE);
                                           mPleaseWait.setVisibility(View.GONE);
+                                          Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+                                          startActivity(intent);
+                                          finish();
                                       }
                                   }
                               });
                   }
+              }
+          });
+
+          TextView linkSignUp = findViewById(R.id.link_signup);
+          linkSignUp.setOnClickListener(new View.OnClickListener() {
+              @Override
+              public void onClick(View v) {
+                  Log.d(TAG, "onClick: navigating to registration screen");
+                  Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
+                  startActivity(intent);
               }
           });
       }
@@ -143,6 +157,8 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onStop() {
         super.onStop();
-        mAuth.removeAuthStateListener(mAuthListener);
+        if(mAuthListener != null){
+            mAuth.removeAuthStateListener(mAuthListener);
+        }
     }
 }
