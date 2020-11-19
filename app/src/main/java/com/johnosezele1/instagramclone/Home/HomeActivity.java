@@ -44,6 +44,8 @@ public class HomeActivity extends AppCompatActivity {
         setUpBottomNavigationView();
         setUpViewPager();
         setupFirebaseAuth();
+
+
     }
 
 
