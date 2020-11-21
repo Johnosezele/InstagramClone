@@ -1,6 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-</LinearLayout>
+    <RelativeLayout
+        android:id="@+id/relSignOut"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:layout_centerHorizontal="true">
+
+        <TextView
+            android:id="@+id/tvConfirmSignOut"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:text="Are you sure you want to sign out?"/>
+
+        <Button
+            android:id="@+id/btnConfirmSignOut"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="25dp"
+            android:layout_below="@+id/tvConfirmSignOut"
+            android:textSize="20sp"
+            android:text="Sign Out"
+            android:background="@drawable/white_rounded_button"/>
+
+    </RelativeLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBarSignOut"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/relSignOut"
+        android:layout_marginTop="15dp"/>
+
+
+
+</RelativeLayout>

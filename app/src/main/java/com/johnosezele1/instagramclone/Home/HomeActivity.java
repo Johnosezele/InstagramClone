@@ -128,14 +128,14 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     @Override
-    protected void onStart() {
+    public void onStart() {
         super.onStart();
         mAuth.addAuthStateListener(mAuthListener);
         checkCurrentUser(mAuth.getCurrentUser());
     }
 
     @Override
-    protected void onStop() {
+    public void onStop() {
         super.onStop();
         mAuth.removeAuthStateListener(mAuthListener);
     }
